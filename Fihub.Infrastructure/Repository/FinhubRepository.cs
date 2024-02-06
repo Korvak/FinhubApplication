@@ -5,7 +5,9 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Fihub.Infrastructure.Repository
@@ -30,14 +32,16 @@ namespace Fihub.Infrastructure.Repository
             }
         }
 
-        protected async Task<HttpResponseMessage> SendFinhubRequest(string stockSymbol, string methodName, HttpMethod method)
+        protected async Task<HttpResponseMessage> SendFinhubRequest(string stockSymbol, string methodName, HttpMethod method, 
+            string searchMethod = "symbol")
         {
-            //a shared method for Finuhb general requests
+            /** a shared method for Finuhb API general requests
+             */
             using (HttpClient client = _httpClientFactory.CreateClient())
             {
                 HttpRequestMessage request = new HttpRequestMessage()
                 {
-                    RequestUri = new Uri($"{_options.Weburl}/{methodName}?symbol={stockSymbol}&token={_options.ApiKey}"),
+                    RequestUri = new Uri($"{_options.Weburl}/{methodName}?{searchMethod}={stockSymbol}&token={_options.ApiKey}"),
                     Method = method
                 };
                 return await client.SendAsync(request);
@@ -46,22 +50,30 @@ namespace Fihub.Infrastructure.Repository
 
         public async Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol)
         {
-            throw new NotImplementedException();
+            HttpResponseMessage response = await SendFinhubRequest(stockSymbol, "stock/profile2", HttpMethod.Get);
+            string jsonData = await ReadResponseAsString(response);
+            return JsonSerializer.Deserialize<Dictionary<string, object>?>(jsonData);
         }
 
         public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
         {
-            throw new NotImplementedException();
+            HttpResponseMessage response = await SendFinhubRequest(stockSymbol, "quote", HttpMethod.Get);
+            string jsonData = await ReadResponseAsString(response);
+            return JsonSerializer.Deserialize<Dictionary<string, object>?>(jsonData);
         }
 
-        public async Task<List<Dictionary<string, string>>?> GetStocks()
-        {
-            throw new NotImplementedException();
+        public async Task<List<Dictionary<string, string>>?> GetStocks(string? exchange = "US")
+        { //since this is not a general request but rather fetches everything, 
+            HttpResponseMessage response = await SendFinhubRequest(exchange ?? "US", "symbol", HttpMethod.Get, "exchange");
+            string jsonData = await ReadResponseAsString(response);
+            return JsonSerializer.Deserialize<List<Dictionary<string, string>>?>(jsonData);
         }
 
         public async Task<Dictionary<string, object>?> SearchStocks(string stockSymbolToSearch)
         {
-            throw new NotImplementedException();
+            HttpResponseMessage response = await SendFinhubRequest(stockSymbolToSearch, "quote", HttpMethod.Get, "q");
+            string jsonData = await ReadResponseAsString(response);
+            return JsonSerializer.Deserialize<Dictionary<string, object>?>(jsonData);
         }
     }
 }
