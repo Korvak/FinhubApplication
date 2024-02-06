@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Finhub.UI", "FinhubApplication\Finhub.UI.csproj", "{0E273CF1-DFD9-4CF5-B581-390788CC6149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF20379E-89EB-41D4-AE2E-145DE620028D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finhub.Core", "Finhub.Core\Finhub.Core.csproj", "{AF4BB4C3-9685-4441-B687-5657037E149E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fihub.Infrastructure", "Fihub.Infrastructure\Fihub.Infrastructure.csproj", "{3A2EE901-C445-4CE0-B174-63729A6ABB9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finhub.Application", "Finhub.Application\Finhub.Application.csproj", "{CEFA5524-994D-4760-9C2F-E9F9E139BF01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E273CF1-DFD9-4CF5-B581-390788CC6149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E273CF1-DFD9-4CF5-B581-390788CC6149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E273CF1-DFD9-4CF5-B581-390788CC6149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E273CF1-DFD9-4CF5-B581-390788CC6149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4BB4C3-9685-4441-B687-5657037E149E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4BB4C3-9685-4441-B687-5657037E149E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4BB4C3-9685-4441-B687-5657037E149E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4BB4C3-9685-4441-B687-5657037E149E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A2EE901-C445-4CE0-B174-63729A6ABB9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A2EE901-C445-4CE0-B174-63729A6ABB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A2EE901-C445-4CE0-B174-63729A6ABB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A2EE901-C445-4CE0-B174-63729A6ABB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEFA5524-994D-4760-9C2F-E9F9E139BF01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEFA5524-994D-4760-9C2F-E9F9E139BF01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEFA5524-994D-4760-9C2F-E9F9E139BF01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEFA5524-994D-4760-9C2F-E9F9E139BF01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E273CF1-DFD9-4CF5-B581-390788CC6149} = {FF20379E-89EB-41D4-AE2E-145DE620028D}
+		{AF4BB4C3-9685-4441-B687-5657037E149E} = {FF20379E-89EB-41D4-AE2E-145DE620028D}
+		{3A2EE901-C445-4CE0-B174-63729A6ABB9C} = {FF20379E-89EB-41D4-AE2E-145DE620028D}
+		{CEFA5524-994D-4760-9C2F-E9F9E139BF01} = {FF20379E-89EB-41D4-AE2E-145DE620028D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57B0A039-00B5-4D7C-9955-38C0EE70F5CD}
+	EndGlobalSection
+EndGlobal
