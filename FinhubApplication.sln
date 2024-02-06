@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF20379E-89E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finhub.Core", "Finhub.Core\Finhub.Core.csproj", "{AF4BB4C3-9685-4441-B687-5657037E149E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fihub.Infrastructure", "Fihub.Infrastructure\Fihub.Infrastructure.csproj", "{3A2EE901-C445-4CE0-B174-63729A6ABB9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finhub.Infrastructure", "Fihub.Infrastructure\Finhub.Infrastructure.csproj", "{3A2EE901-C445-4CE0-B174-63729A6ABB9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finhub.Application", "Finhub.Application\Finhub.Application.csproj", "{CEFA5524-994D-4760-9C2F-E9F9E139BF01}"
 EndProject

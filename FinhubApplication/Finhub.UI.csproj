@@ -15,4 +15,10 @@
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Fihub.Infrastructure\Finhub.Infrastructure.csproj" />
+    <ProjectReference Include="..\Finhub.Application\Finhub.Application.csproj" />
+    <ProjectReference Include="..\Finhub.Core\Finhub.Core.csproj" />
+  </ItemGroup>
+
 </Project>
