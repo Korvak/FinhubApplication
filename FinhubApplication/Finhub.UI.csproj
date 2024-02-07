@@ -4,7 +4,15 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>e237465f-93f0-41ef-9377-13b49499c508</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers - Copia\**" />
+    <Content Remove="Controllers - Copia\**" />
+    <EmbeddedResource Remove="Controllers - Copia\**" />
+    <None Remove="Controllers - Copia\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Middleware\" />
@@ -13,6 +21,11 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.26" />
   </ItemGroup>
 
   <ItemGroup>

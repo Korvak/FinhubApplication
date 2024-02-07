@@ -12,7 +12,7 @@ namespace Finhub.Core.Domain.RepositoryContracts
 
         public Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol);
 
-        public Task<List<Dictionary<string, string>>?> GetStocks(string? exchange);
+        public Task<List<Dictionary<string, string>>?> GetStocks(string exchange);
 
         public Task<Dictionary<string, object>?> SearchStocks(string stockSymbolToSearch);
     }

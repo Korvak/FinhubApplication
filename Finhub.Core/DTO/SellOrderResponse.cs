@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finhub.Core.Domain.Entitites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,22 @@ namespace Finhub.Core.DTO
         public double Price { get; set; }
 
         public double TradeAmount { get; set; }
+    }
+
+    public static class SellOrderResponseExtension
+    {
+        public static SellOrderResponse ToSellOrderResponse(this SellOrder order)
+        {
+            return new SellOrderResponse()
+            {
+                SellOrderID = order.SellOrderID,
+                StockName = order.StockName,
+                StockSymbol = order.StockSymbol,
+                DateAndTimeOfOrder = order.DateAndTimeOfOrder,
+                Price = order.Price,
+                Quantity = order.Quantity,
+                TradeAmount = order.Quantity
+            };
+        }
     }
 }

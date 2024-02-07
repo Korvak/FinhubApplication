@@ -17,9 +17,9 @@ namespace Finhub.Infrastructure.DbContexts
             //we need the DbContextOptions or the Extension method will throw error.
         }
 
-        DbSet<BuyOrder> BuyOrders { get; set; }
+        public DbSet<BuyOrder> BuyOrders { get; set; }
 
-        DbSet<SellOrder> SellOrders { get; set; }
+        public DbSet<SellOrder> SellOrders { get; set; }
 
 
     }

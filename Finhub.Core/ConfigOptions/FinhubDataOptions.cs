@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Finhub.Core.Domain.ConfigOptions
+namespace Finhub.Core.ConfigOptions
 {
     public class FinhubOptions
     {

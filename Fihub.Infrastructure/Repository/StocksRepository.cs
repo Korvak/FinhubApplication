@@ -1,5 +1,7 @@
 ﻿using Finhub.Core.Domain.Entitites;
 using Finhub.Core.Domain.RepositoryContracts;
+using Finhub.Infrastructure.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +12,39 @@ namespace Finhub.Infrastructure.Repository
 {
     public class StocksRepository : IStocksRepository
     {
-        public Task<BuyOrder> CreateBuyOrder(BuyOrder buyOrder)
-        {
-            throw new NotImplementedException();
+        private StockMarketDbContext _dbContext {  get; set; }
+
+        public StocksRepository(StockMarketDbContext dbContext)
+        { //this should be scoped 
+            _dbContext = dbContext;
         }
 
-        public Task<SellOrder> CreateSellOrder(SellOrder sellOrder)
+        public async Task<BuyOrder> CreateBuyOrder(BuyOrder buyOrder)
         {
-            throw new NotImplementedException();
+            await _dbContext.BuyOrders.AddAsync(buyOrder);
+            await _dbContext.SaveChangesAsync();
+            //updates the ID before returning it
+            return buyOrder;
         }
 
-        public Task<List<BuyOrder>> GetBuyOrders()
-        {
-            throw new NotImplementedException();
+        public async Task<SellOrder> CreateSellOrder(SellOrder sellOrder)
+        { //same as CreateBuyOrder but with SellOrder instead
+            await _dbContext.SellOrders.AddAsync(sellOrder);
+            await _dbContext.SaveChangesAsync();
+            //updates the ID before returning it
+            return sellOrder;
         }
 
-        public Task<List<SellOrder>> GetSellOrders()
+        public async Task<List<BuyOrder>> GetBuyOrders()
         {
-            throw new NotImplementedException();
+            List<BuyOrder> list = await _dbContext.BuyOrders.ToListAsync();
+            return list;
+        }
+
+        public async Task<List<SellOrder>> GetSellOrders()
+        {
+            List<SellOrder> list = await _dbContext.SellOrders.ToListAsync();
+            return list;
         }
     }
 }

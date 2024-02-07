@@ -1,4 +1,4 @@
-﻿using Finhub.Core.Domain.ConfigOptions;
+﻿using Finhub.Core.ConfigOptions;
 using Finhub.Core.Domain.RepositoryContracts;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using Microsoft.Extensions.Options;

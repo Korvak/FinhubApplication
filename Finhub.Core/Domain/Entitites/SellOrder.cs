@@ -9,6 +9,7 @@ namespace Finhub.Core.Domain.Entitites
 {
     public class SellOrder 
     {
+        
         public Guid SellOrderID { get; set; }
 
         [Required]
