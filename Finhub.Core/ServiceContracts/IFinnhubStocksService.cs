@@ -8,6 +8,6 @@ namespace Finhub.Core.ServiceContracts
 {
     public interface IFinnhubStocksService
     {
-        public Task<List<Dictionary<string, string>>?> GetStocks();
+        public Task<List<Dictionary<string, string>>?> GetStocks(string? exchange = null);
     }
 }

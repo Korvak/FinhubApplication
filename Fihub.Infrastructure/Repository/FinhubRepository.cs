@@ -63,7 +63,7 @@ namespace Finhub.Infrastructure.Repository
         }
 
         public async Task<List<Dictionary<string, string>>?> GetStocks(string? exchange = "US")
-        { //since this is not a general request but rather fetches everything, 
+        { 
             HttpResponseMessage response = await SendFinhubRequest(exchange ?? "US", "symbol", HttpMethod.Get, "exchange");
             string jsonData = await ReadResponseAsString(response);
             return JsonSerializer.Deserialize<List<Dictionary<string, string>>?>(jsonData);

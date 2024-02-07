@@ -22,11 +22,12 @@ namespace Finhub.Application.Services
             _tradeOptions = options.Value;
         }
 
-        public async Task<List<Dictionary<string, string>>?> GetStocks()
+        public async Task<List<Dictionary<string, string>>?> GetStocks(string? exchange = null)
         {
             try
             {
-                return await _finnhubRepository.GetStocks(_tradeOptions.DefaultExchange);
+                exchange = exchange ?? _tradeOptions.DefaultExchange;
+                return await _finnhubRepository.GetStocks(exchange);
             }
             catch (HttpRequestException ex)
             { //toy demonstration should be handled using serilog
